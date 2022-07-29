@@ -5,6 +5,8 @@ package com.deutsche.app;
 
 import java.util.Scanner;
 
+import com.deutsche.service.ProfessorService;
+
 /**
  * @author sukhb
  *
@@ -38,24 +40,15 @@ public class CRSApplication {
 				
 					switch (role) {
 					case "professor":
-						int profChoice = 0;
-						while (profChoice != 3) {
-							System.out.println("\nEnter Choice\n1. Add Grades\n2. View Enrolled Students\n3. Exit");
-							profChoice = sc.nextInt();
-						    sc.nextLine();
-						    
-						    
-						    
-						}
+						ProfessorApp profApp = new ProfessorApp();
+						profApp.showProfessorMenu(username);
+						break;
 					    
 						
 					case "student":
-						int studentChoice = 0;
-						while (studentChoice != 6) {
-							System.out.println("\nEnter Choice\n1. Register for course\n2. Add course\n3. Drop course\n4. View grade card\n5. Pay fee\n6. Exit");
-							studentChoice = sc.nextInt();
-						    sc.nextLine();
-						}
+						StudentApp studentApp = new StudentApp();
+						studentApp.showStudentMenu(username);
+						break;
 
 						
 						
